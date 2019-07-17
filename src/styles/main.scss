@@ -10,23 +10,6 @@
 // Modules
 @import "modules/main";
 
-.content {
-  width: 100vw;
-  height: 100vh;
-  background: $bg-color;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.content__image {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.content__logo {
-  position: absolute;
-  top: 56px;
-  left: 100px;
-}
+// Components
+@import "components/main";

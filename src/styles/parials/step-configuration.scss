@@ -1,0 +1,129 @@
+@import "../variables";
+
+$step-configuration-shadow: 0 12px 9px 0 rgba(0, 0, 0, 0.23);
+$step-content-image-size: 324px;
+$step-configuration-footprint-size: 44px;
+
+.step-configuration {
+  padding-bottom: $footer-height;
+  width: $container-width;
+  font-size: 16px;
+}
+
+.step-configuration__container {
+  background: $color-white;
+  width: 100%;
+  border-radius: 11px;
+  box-shadow: $step-configuration-shadow;
+  padding: 30px 40px;
+  margin: 0 0 13px;
+  position: relative;
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.step-configuration__head {
+  color: $color-text-dark;
+  margin: 0 0 20px;
+}
+
+.step-configuration__title {
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: 0.22px;
+  line-height: 1.8;
+}
+
+.step-configuration__footprint {
+  position: absolute;
+  width: $step-configuration-footprint-size;
+  height: $step-configuration-footprint-size;
+  left: -$step-configuration-footprint-size;
+  top: 33px;
+  background-color: #95c8cf;
+  border-radius: 93px 0 0 93px;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+}
+
+.step-title {
+  color: $color-orange;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 1.4;
+  letter-spacing: 0.19px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.step-content {
+  display: flex;
+  margin: 30px 0 10px;
+}
+
+.step-content__image {
+  padding: 10px;
+  width: $step-content-image-size;
+  height: $step-content-image-size;
+  min-width: $step-content-image-size;
+  border-radius: 6px;
+  border: 2px dashed $color-text;
+  background-color: $color-white;
+  margin: 0 30px 0 0;
+  display: flex;
+  align-items: stretch;
+}
+
+.step-content__configuration {
+  width: calc(100% - 30px - #{$step-content-image-size});
+}
+
+.step-content__title {
+  color: #95c8cf;
+  line-height: 1;
+  letter-spacing: 0.27px;
+  margin: 0 0 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.step-content__textarea-wrapper {
+  position: relative;
+  margin: 0 0 2px;
+}
+
+.step-content__textarea {
+  border: 2px solid $color-text;
+  border-radius: 6px;
+  width: 100%;
+  height: 112px;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.17px;
+  padding: 10px 15px;
+  color: $color-text-dark;
+  font-family: 'GothamPro', Tahoma, Arial, sans-serif;
+}
+
+.step-content__text-length {
+  text-align: right;
+  color: #a9dbe2;
+  font-size: 10px;
+  line-height: 2.1;
+  letter-spacing: 0.12px;
+  font-weight: 900;
+}
+
+.step-content__column-wrapper {
+  display: flex;
+}
+
+.step-content__column {
+  margin: 0 30px 0 0;
+}

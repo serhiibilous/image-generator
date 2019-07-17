@@ -3,16 +3,13 @@
 $footer-border-color: #b4dfe5;
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
   border-top: 8px solid $footer-border-color;
-  height: 110px;
+  height: $footer-height;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 16px;
   letter-spacing: 0.47px;
   color: $color-text;
+  width: 100%;
 }

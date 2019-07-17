@@ -1,3 +1,5 @@
+@import "variables";
+
 * {
   box-sizing: border-box;
 }
@@ -5,10 +7,42 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'ProximaNova', Tahoma, Arial, sans-serif;
+  font-family: 'GothamPro', Tahoma, Arial, sans-serif;
+  font-size: 16px;
 }
 
 h1 {
   margin: 0;
   padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.font-weight-900 {
+  font-weight: 900;
+}
+
+.color-orange {
+  color: $color-orange;
+}
+
+.hide {
+  display: none;
+}
+
+.content {
+  width: 100%;
+  background: $bg-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
