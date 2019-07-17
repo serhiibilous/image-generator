@@ -13,7 +13,7 @@ class GeneratedImage extends React.Component {
     const colorWhite = '#ffffff'
 
     const styles = {
-      height: 'calc(100% - 24px)',
+      height: 'calc(100% - 20px)',
       width: '100%',
       background: color,
       textAlign: 'left',

@@ -27,10 +27,17 @@ class StepConfiguration extends React.Component {
     imageName: null
   }
 
+  prepareBodyStyle = () => {
+    document.body.classList.toggle('body--overflowed')
+  }
+
   buildImage = () => {
+    window.scrollTo(0, 0)
+    this.prepareBodyStyle()
     let element = this.imageContainer.current
     html2canvas(element, {scale: 3.6}).then(canvas => {
-      let image = canvas.toDataURL('image/jpeg', 3)
+      this.prepareBodyStyle()
+      let image = canvas.toDataURL('image/jpeg')
       const imageName = imageNameCreator()
       this.setState({image, imageName})
       this.imageLink.current.click()
