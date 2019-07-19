@@ -1,20 +1,20 @@
 import React, {Fragment} from 'react'
-import WelcomeImage from '../images/welcome-image.svg'
+import WelcomeImage from './welcome-image'
 
-import {stepChange} from '../store/actions'
+import {stepChange, contentColorChange} from '../store/actions'
 
 // import {bindActionCreators} from "redux"
 import {connect} from 'react-redux'
 
 class StepWelcome extends React.Component {
   render() {
-    const {stepChange} = this.props
+    const {stepChange, contentColorChange} = this.props
 
     return (
       <Fragment>
         <div className="step-welcome">
           <div className="step-welcome__image">
-            <img src={WelcomeImage} alt="Welcome Image"/>
+            <WelcomeImage/>
           </div>
           <div>
             <h1 className="step-welcome__title">
@@ -27,7 +27,10 @@ class StepWelcome extends React.Component {
           </div>
           <div className="step-welcome__button">
             <button className="button button--primary"
-                    onClick={() => stepChange('configuration')}>
+                    onClick={() => {
+                      stepChange('configuration');
+                      contentColorChange('#f4f4f4')
+                    }}>
               Start creating
             </button>
           </div>
@@ -43,6 +46,6 @@ class StepWelcome extends React.Component {
 //   }, dispatch)
 // }
 
-const mapDispatchToProps = {stepChange}
+const mapDispatchToProps = {stepChange, contentColorChange}
 
 export default connect(null, mapDispatchToProps)(StepWelcome)

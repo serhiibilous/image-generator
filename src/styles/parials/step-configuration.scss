@@ -5,9 +5,13 @@ $step-content-image-size: 324px;
 $step-configuration-footprint-size: 44px;
 
 .step-configuration {
-  padding-bottom: $footer-height;
   width: $container-width;
   font-size: 16px;
+
+  + .footer {
+    position: static;
+    margin-top: $footer-height;
+  }
 }
 
 .step-configuration__container {
@@ -27,6 +31,7 @@ $step-configuration-footprint-size: 44px;
 .step-configuration__head {
   color: $color-text-dark;
   margin: 0 0 20px;
+  padding-left: 30px;
 }
 
 .step-configuration__title {

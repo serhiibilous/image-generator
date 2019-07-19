@@ -16,7 +16,7 @@ import {connect} from 'react-redux'
 import imageNameCreator from '../utils/image-name-creator'
 
 // Images
-import footprintIcon from '../images/footprint.svg'
+import FootprintIcon from './footprint-icon'
 
 class StepConfiguration extends React.Component {
   imageContainer = React.createRef()
@@ -58,9 +58,7 @@ class StepConfiguration extends React.Component {
           </p>
         </div>
         <div className="step-configuration__container">
-          <span className="step-configuration__footprint">
-            <img src={footprintIcon} alt="STEP 1 (Settings)"/>
-          </span>
+          <FootprintIcon />
           <div>
             <h2 className="step-title">
               <span>
@@ -82,9 +80,7 @@ class StepConfiguration extends React.Component {
           </div>
         </div>
         <div className="step-configuration__container">
-          <span className="step-configuration__footprint">
-            <img src={footprintIcon} alt="STEP 2 (Export)"/>
-          </span>
+          <FootprintIcon />
           <div>
             <h2 className="step-title">
               <span>

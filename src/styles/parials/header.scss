@@ -1,18 +1,21 @@
 @import "../variables";
 
-.header {
+.content-header {
   height: $footer-height;
   width: 100%;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
-.header__label {
+.content-header__label {
   position: absolute;
   top: 0;
   right: 0;
 }
 
-.header__container {
+.content-header__container {
   position: relative;
   display: flex;
   align-items: center;
@@ -22,6 +25,6 @@
   @media (max-width: 1600px) {
     max-width: $container-width;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 30px;
   }
 }

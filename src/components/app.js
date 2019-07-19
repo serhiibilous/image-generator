@@ -8,9 +8,9 @@ import Footer from './footer'
 import StepWelcome from './step-welcome'
 import StepConfiguration from './step-configuration'
 
-const App = ({step}) => {
+const App = ({step, contentColor}) => {
   return (
-    <div className="content">
+    <div className="content" style={{background: contentColor}}>
       <Header/>
       {step === 'configuration' && <StepConfiguration/>}
       {step === 'welcome' && <StepWelcome/>}
@@ -19,8 +19,8 @@ const App = ({step}) => {
   )
 }
 
-const mapStateToProps = ({step}) => {
-  return {step}
+const mapStateToProps = ({step, contentColor}) => {
+  return {step, contentColor}
 }
 
 export default connect(mapStateToProps)(App)

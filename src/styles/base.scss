@@ -49,12 +49,12 @@ input {
 }
 
 .content {
-  // width: 100vw;
-  // height: 100vh;
-  background: $bg-color;
+  position: relative;
+  min-height: 100vh;
+  background: #f4f4f4;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  // overflow-y: scroll;
+  padding: $footer-height 0 0;
 }
