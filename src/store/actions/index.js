@@ -26,17 +26,9 @@ const extensionChange = (extension) => {
   }
 }
 
-const contentColorChange = (color) => {
-  return {
-    type: 'CONTENT_COLOR_CHANGE',
-    payload: color
-  }
-}
-
 export {
   stepChange,
   colorChange,
   textChange,
-  extensionChange,
-  contentColorChange
+  extensionChange
 }

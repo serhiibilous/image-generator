@@ -1,5 +1,5 @@
 // Libraries
-import React from 'react'
+import React, {Fragment} from 'react'
 import {connect} from 'react-redux'
 
 // Components
@@ -8,19 +8,21 @@ import Footer from './footer'
 import StepWelcome from './step-welcome'
 import StepConfiguration from './step-configuration'
 
-const App = ({step, contentColor}) => {
+const App = ({step}) => {
   return (
-    <div className="content" style={{background: contentColor}}>
-      <Header/>
+    <div className="content">
+      {step === 'welcome' && <Fragment>
+        <Header/>
+        <StepWelcome/>
+        <Footer/>
+      </Fragment>}
       {step === 'configuration' && <StepConfiguration/>}
-      {step === 'welcome' && <StepWelcome/>}
-      <Footer/>
     </div>
   )
 }
 
-const mapStateToProps = ({step, contentColor}) => {
-  return {step, contentColor}
+const mapStateToProps = ({step}) => {
+  return {step}
 }
 
 export default connect(mapStateToProps)(App)

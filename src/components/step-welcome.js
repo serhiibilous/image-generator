@@ -1,5 +1,4 @@
 import React, {Fragment} from 'react'
-import WelcomeImage from './welcome-image'
 
 import {stepChange, contentColorChange} from '../store/actions'
 
@@ -8,18 +7,14 @@ import {connect} from 'react-redux'
 
 class StepWelcome extends React.Component {
   render() {
-    const {stepChange, contentColorChange} = this.props
+    const {stepChange} = this.props
 
     return (
       <Fragment>
         <div className="step-welcome">
-          <div className="step-welcome__image">
-            <WelcomeImage/>
-          </div>
           <div>
             <h1 className="step-welcome__title">
-              Welcome to GOODQUES
-              simple image generator
+              Welcome simple image generator
             </h1>
             <p className="step-welcome__text">
               Make images for instagram profile in oke click of the mouse
@@ -27,10 +22,7 @@ class StepWelcome extends React.Component {
           </div>
           <div className="step-welcome__button">
             <button className="button button--primary"
-                    onClick={() => {
-                      stepChange('configuration');
-                      contentColorChange('#f4f4f4')
-                    }}>
+                    onClick={() => stepChange('configuration')}>
               Start creating
             </button>
           </div>

@@ -1,17 +1,25 @@
 {
-  "name": "image-generator-goodques",
+  "name": "image-generator",
   "version": "1.0.0",
-  "description": "Image generator goodques",
+  "description": "Image generator",
   "main": "src/index.js",
   "scripts": {
     "dev": "webpack --mode=development --watch",
     "prod": "webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serhiibilous/image-generator.git"
   },
   "keywords": [
     "webpack"
   ],
   "author": "Serhii Bilous",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/serhiibilous/image-generator/issues"
+  },
+  "homepage": "https://github.com/serhiibilous/image-generator#readme",
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/plugin-proposal-class-properties": "^7.5.0",

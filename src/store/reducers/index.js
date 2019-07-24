@@ -1,5 +1,4 @@
 const initialState = {
-  contentColor: '#d1fdfe',
   colorsList: [
     {
       name: 'light',
@@ -24,7 +23,6 @@ const initialState = {
       value: 'pdf'
     }
   ],
-  // step: 'configuration',
   step: 'welcome',
   color: '#d1fdfe',
   text: 'Your text here',
@@ -52,11 +50,6 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         extension: action.payload
-      }
-    case 'CONTENT_COLOR_CHANGE':
-      return {
-        ...state,
-        contentColor: action.payload
       }
     default:
       return state
