@@ -5,8 +5,18 @@
   border-radius: 30px;
   border: dashed 2px $color-text;
   position: relative;
-  padding: 85px;
+  padding: 150px 85px 84px;
   text-align: center;
+  margin-bottom: $footer-height;
+}
+
+.step-welcome__image {
+  position: absolute;
+  top: -80px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  left: 0;
 }
 
 .step-welcome__title {

@@ -1,0 +1,103 @@
+@import "../variables";
+
+.custom-theme-tooltip {
+  position: absolute;
+  bottom: 100%;
+  width: 524px;
+  left: -230px;
+}
+
+.custom-theme-tooltip__step {
+  background-color: $color-white;
+  border-radius: 11px;
+  box-shadow: 0 12px 9px 0 rgba(0, 0, 0, 0.23);
+  padding: 25px 40px;
+  margin: 0 0 8px;
+}
+
+.custom-theme-tooltip__title {
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.27px;
+  color: #6d6d6d;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin: 0 0 23px;
+}
+
+.custom-theme-tooltip__column-wrapper {
+  display: flex;
+}
+
+.custom-theme-tooltip__column {
+  width: 50%;
+
+  &:last-child {
+    padding-left: 20px;
+  }
+}
+
+.custom-theme-tooltip__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.custom-theme-tooltip__item-name {
+  font-size: 14px;
+  letter-spacing: 0.23px;
+  line-height: 30px;
+  font-weight: 700;
+  color: #bbbbbb;
+}
+
+.custom-theme-tooltip__style {
+  display: flex;
+  align-items: center;
+  border: 2px solid transparent;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &.active {
+    border-color: #b4dfe5;
+
+    &:hover {
+      .custom-theme-tooltip__item-color {
+        background-color: #e8e8e8;
+      }
+    }
+  }
+
+  &:hover {
+    .custom-theme-tooltip__item-color {
+      background-color: darken(#e8e8e8, 10%);
+    }
+  }
+}
+
+.custom-theme-tooltip__item-bg {
+  width: 21px;
+  height: 21px;
+  border-radius: 6px;
+  margin: 0 6px 0 0;
+  display: block;
+  border: solid 2px #e8e8e8;
+}
+
+.custom-theme-tooltip__item-color {
+  background-color: #e8e8e8;
+  color: #a6a6a6;
+  border-radius: 6px;
+  line-height: 24px;
+  font-size: 14px;
+  font-weight: 700;
+  display: block;
+  text-align: center;
+  width: 80px;
+  transition: background-color ease 0.2s;
+}
+
+.hue-horizontal {
+  border-radius: 3px;
+}

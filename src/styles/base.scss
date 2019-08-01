@@ -7,8 +7,13 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'GothamPro', Tahoma, Arial, sans-serif;
+  font-family: 'GoodguesMain', Tahoma, Arial, sans-serif;
   font-size: 16px;
+
+  &.body--overflowed {
+    overflow: hidden;
+    padding-right: 17px;
+  }
 }
 
 h1 {
@@ -45,15 +50,11 @@ input {
 
 .content {
   position: relative;
-  height: 100vh;
-  width: 100vw;
-  background: $content-bg-color;
+  min-height: 100vh;
+  background: #f4f4f4;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  @media (max-width: 1023px) {
-    padding: 0 15px;
-  }
+  padding: $footer-height 0 0;
 }

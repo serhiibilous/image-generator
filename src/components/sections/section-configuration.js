@@ -3,22 +3,23 @@ import React from 'react'
 import html2canvas from "html2canvas"
 
 // Components
-import SelectionColor from './selection-color'
-import SelectionExtension from './selection-extension'
-import SelectionText from './selection-text'
-import GeneratedImage from './generated-image'
+import SelectionColor from '../selections/selection-color'
+import SelectionExtension from '../selections/selection-extension'
+import SelectionText from '../selections/selection-text'
+import SelectionFontSize from '../selections/selection-font-size'
+import GeneratedImage from '../generated-image'
 
 // Redux
-import {textChange} from '../store/actions'
+import {textChange} from '../../store/actions'
 import {connect} from 'react-redux'
 
 // Utils
-import imageNameCreator from '../utils/image-name-creator'
+import imageNameCreator from '../../utils/image-name-creator'
 
 // Images
-import FootprintIcon from './images/footprint-icon'
+import FootprintIcon from '../images/footprint-icon'
 
-class StepConfiguration extends React.Component {
+class SectionConfiguration extends React.Component {
   imageContainer = React.createRef()
   imageLink = React.createRef()
 
@@ -49,6 +50,14 @@ class StepConfiguration extends React.Component {
 
     return (
       <div className="step-configuration">
+        <div className="step-configuration__head">
+          <h1 className="step-configuration__title">
+            Simple image generator
+          </h1>
+          <p>
+            Paste or type text to entry field then press export button.
+          </p>
+        </div>
         <div className="step-configuration__container">
           <FootprintIcon />
           <div>
@@ -66,6 +75,7 @@ class StepConfiguration extends React.Component {
               <SelectionText/>
               <div className="step-content__column-wrapper">
                 <SelectionColor/>
+                <SelectionFontSize/>
                 <SelectionExtension/>
               </div>
             </div>
@@ -96,4 +106,4 @@ const mapStateToProps = ({text, color}) => {
 
 const mapDispatchToProps = {textChange}
 
-export default connect(mapStateToProps, mapDispatchToProps)(StepConfiguration)
+export default connect(mapStateToProps, mapDispatchToProps)(SectionConfiguration)

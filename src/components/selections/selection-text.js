@@ -1,7 +1,7 @@
 import React from 'react'
 
 import {connect} from 'react-redux'
-import {textChange} from "../store/actions";
+import {textChange} from "../../store/actions";
 
 class SelectionText extends React.Component {
 

@@ -1,14 +1,14 @@
-const stepChange = (step) => {
+const sectionChange = (step) => {
   return {
-    type: 'STEP_CHANGE',
+    type: 'SECTION_CHANGE',
     payload: step
   }
 }
 
-const colorChange = (color) => {
+const themeChange = (theme) => {
   return {
-    type: 'COLOR_CHANGE',
-    payload: color
+    type: 'THEME_CHANGE',
+    payload: theme
   }
 }
 
@@ -26,9 +26,41 @@ const extensionChange = (extension) => {
   }
 }
 
+const contentColorChange = (color) => {
+  return {
+    type: 'CONTENT_COLOR_CHANGE',
+    payload: color
+  }
+}
+
+const fontSizeChange = (fontSize) => {
+  return {
+    type: 'FONT_SIZE_CHANGE',
+    payload: fontSize
+  }
+}
+
+const showCustomThemeTooltip = (value) => {
+  return {
+    type: 'SHOW_CUSTOM_THEME_TOOLTIP',
+    payload: value
+  }
+}
+
+const changeCustomThemeStyle = (configuration) => {
+  return {
+    type: 'CHANGE_THEME_STYLE',
+    payload: configuration
+  }
+}
+
 export {
-  stepChange,
-  colorChange,
+  sectionChange,
+  themeChange,
   textChange,
-  extensionChange
+  extensionChange,
+  contentColorChange,
+  fontSizeChange,
+  showCustomThemeTooltip,
+  changeCustomThemeStyle
 }

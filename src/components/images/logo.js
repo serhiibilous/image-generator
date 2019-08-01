@@ -5,9 +5,10 @@ const Logo = ({coverColor, firstColor, secondColor}) => {
     <div className="step-content__logo-wrapper">
       <div className="step-content__logo-cover">
         <svg xmlns="http://www.w3.org/2000/svg"
-             width="112" height="25" viewBox="0 0 112 25">
-          <path fill={coverColor} fillRule="evenodd"
-                d="M.5.193h111l-7.18 17.23a11 11 0 0 1-10.153 6.77H17.833a11 11 0 0 1-10.154-6.77L.5.194z"/>
+             width="111" height="24" viewBox="0 0 111 24">
+          <path fill={coverColor}
+                fillRule="evenodd"
+                d="M0 0h111l-7.18 17.23A11 11 0 0 1 93.668 24H17.333A11 11 0 0 1 7.18 17.23L0 0z"/>
         </svg>
       </div>
       <div className="step-content__logo">

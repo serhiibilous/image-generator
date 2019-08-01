@@ -11,7 +11,7 @@ import store from './store/store'
 
 // Components
 import App from './components/app'
-import ErrorBoundary from './components/error-boundary'
+import ErrorBoundary from './components/partials/error-boundary'
 
 ReactDOM.render(
   <Provider store={store}>

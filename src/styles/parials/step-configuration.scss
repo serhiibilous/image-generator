@@ -8,8 +8,9 @@ $step-configuration-footprint-size: 44px;
   width: $container-width;
   font-size: 16px;
 
-  @media (max-width: 1023px) {
-    width: 100%;
+  + .footer {
+    position: static;
+    margin-top: $footer-height;
   }
 }
 
@@ -27,6 +28,19 @@ $step-configuration-footprint-size: 44px;
   }
 }
 
+.step-configuration__head {
+  color: $color-text-dark;
+  margin: 0 0 20px;
+  padding-left: 30px;
+}
+
+.step-configuration__title {
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: 0.22px;
+  line-height: 1.8;
+}
+
 .step-configuration__footprint {
   position: absolute;
   width: $step-configuration-footprint-size;
@@ -38,10 +52,6 @@ $step-configuration-footprint-size: 44px;
   display: flex;
   align-items: center;
   padding-left: 15px;
-
-  @media (max-width: 1023px) {
-    display: none;
-  }
 }
 
 .step-title {
@@ -74,6 +84,29 @@ $step-configuration-footprint-size: 44px;
   align-items: stretch;
 }
 
+.step-content__image-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.step-content__image-content {
+  height: calc(100% - 20px);
+  width: 100%;
+  text-align: left;
+  padding: 40px;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  border-radius: 0 0 3px 0;
+  letter-spacing: 0.09px;
+}
+
+.step-content__image-quotes {
+  margin: 0 0 5px;
+}
+
 .step-content__configuration {
   width: calc(100% - 30px - #{$step-content-image-size});
 }
@@ -86,6 +119,7 @@ $step-configuration-footprint-size: 44px;
   font-weight: 900;
   text-transform: uppercase;
   font-size: 16px;
+  white-space: nowrap;
 }
 
 .step-content__textarea-wrapper {
@@ -103,7 +137,7 @@ $step-configuration-footprint-size: 44px;
   letter-spacing: 0.17px;
   padding: 10px 15px;
   color: $color-text-dark;
-  font-family: 'GothamPro', Tahoma, Arial, sans-serif;
+  font-family: 'GoodguesMain', Tahoma, Arial, sans-serif;
   max-width: 100%;
 }
 
@@ -121,5 +155,9 @@ $step-configuration-footprint-size: 44px;
 }
 
 .step-content__column {
-  margin: 0 30px 0 0;
+  margin: 0 20px 0 0;
+
+  &:last-child {
+    margin: 0;
+  }
 }

@@ -1,20 +1,25 @@
 import React, {Fragment} from 'react'
+import WelcomeImage from '../images/welcome-image'
 
-import {stepChange, contentColorChange} from '../store/actions'
+import {sectionChange, contentColorChange} from '../../store/actions'
 
 // import {bindActionCreators} from "redux"
 import {connect} from 'react-redux'
 
-class StepWelcome extends React.Component {
+class SectionWelcome extends React.Component {
   render() {
-    const {stepChange} = this.props
+    const {sectionChange, contentColorChange} = this.props
 
     return (
       <Fragment>
         <div className="step-welcome">
+          <div className="step-welcome__image">
+            <WelcomeImage/>
+          </div>
           <div>
             <h1 className="step-welcome__title">
-              Welcome simple image generator
+              Welcome to GOODQUES
+              simple image generator
             </h1>
             <p className="step-welcome__text">
               Make images for instagram profile in oke click of the mouse
@@ -22,7 +27,10 @@ class StepWelcome extends React.Component {
           </div>
           <div className="step-welcome__button">
             <button className="button button--primary"
-                    onClick={() => stepChange('configuration')}>
+                    onClick={() => {
+                      sectionChange('configuration');
+                      contentColorChange('#f4f4f4')
+                    }}>
               Start creating
             </button>
           </div>
@@ -38,6 +46,6 @@ class StepWelcome extends React.Component {
 //   }, dispatch)
 // }
 
-const mapDispatchToProps = {stepChange, contentColorChange}
+const mapDispatchToProps = {sectionChange, contentColorChange}
 
-export default connect(null, mapDispatchToProps)(StepWelcome)
+export default connect(null, mapDispatchToProps)(SectionWelcome)
