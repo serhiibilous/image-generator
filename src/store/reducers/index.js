@@ -118,13 +118,25 @@ const reducer = (state = initialState, action) => {
         customThemeTooltip: action.payload
       }
     case 'CHANGE_THEME_STYLE':
-      // const theme = state.themesList.find((el) => el.name === action.payload.name)
       return {
         ...state,
         theme: {
-          ...state.theme,
+          name: 'custom',
+          used: true,
           configuration: action.payload
         }
+      }
+    case 'CHANGE_CUSTOM_THEME_STYLE':
+      return {
+        ...state,
+        themesList: [
+          ...state.themesList.slice(0, state.themesList.length - 1),
+          {
+            name: 'custom',
+            used: true,
+            configuration: action.payload
+          }
+        ]
       }
     default:
       return state

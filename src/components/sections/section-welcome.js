@@ -28,7 +28,7 @@ class SectionWelcome extends React.Component {
           <div className="step-welcome__button">
             <button className="button button--primary"
                     onClick={() => {
-                      sectionChange('configuration');
+                      sectionChange('configuration')
                       contentColorChange('#f4f4f4')
                     }}>
               Start creating

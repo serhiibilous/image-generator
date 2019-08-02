@@ -1,26 +1,31 @@
 import React from 'react'
 import {connect} from "react-redux"
 import ColorPicker from '../color-picker'
+import IconResetAll from '../images/icon-reset-all'
 
-import {changeCustomThemeStyle, showCustomThemeTooltip, themeChange} from '../../store/actions'
+import {changeThemeStyle, showCustomThemeTooltip, themeChange, changeCustomThemeStyle} from '../../store/actions'
 
 class CustomThemeTooltip extends React.Component {
   state = {
+    changedStyles: true,
     color: null,
     currentStyle: 'Background',
-    colorPickerValue: '#f46946',
-    customConfiguration: this.props.themesList.find((el) => el.name === 'custom').configuration
+    customConfiguration: this.props.themesList.find((el) => el.name === 'custom').configuration,
+    colorPickerValue: this.props.themesList.find((el) => el.name === 'custom').configuration.Background
   }
 
   handleChange = (color) => {
+    console.log(color)
+    const customConfiguration = this.state.customConfiguration
     this.setState({
+      changedStyles: false,
       colorPickerValue: color.hex,
       customConfiguration: {
-        ...this.state.customConfiguration,
+        ...customConfiguration,
         [this.state.currentStyle]: color.hex
       }
     })
-    this.props.changeCustomThemeStyle(this.state.customConfiguration)
+    this.props.changeThemeStyle(customConfiguration)
   }
 
   selectStyle = (event, configuration) => {
@@ -30,10 +35,26 @@ class CustomThemeTooltip extends React.Component {
     })
   }
 
+  resetAllStyles = () => {
+    const customConfiguration = this.props.themesList.find((el) => el.name === 'custom').configuration
+    this.setState({
+      changedStyles: true,
+      colorPickerValue: customConfiguration.Background,
+      customConfiguration: customConfiguration
+    })
+    this.props.changeThemeStyle(customConfiguration)
+  }
+
+  applyThemeStyle = () => {
+    this.props.changeCustomThemeStyle(this.state.customConfiguration)
+  }
+
   render() {
-    const {currentStyle, colorPickerValue, customConfiguration} = this.state
+    const {currentStyle, colorPickerValue, customConfiguration, changedStyles} = this.state
+    const {showCustomThemeTooltip, themeChange, theme, tooltip} = this.props
+
     return (
-      <div className="custom-theme-tooltip">
+      <div className="custom-theme-tooltip" ref={tooltip}>
         <div className="custom-theme-tooltip__step">
           <h2 className="custom-theme-tooltip__title">
             Choose colors for all elements
@@ -70,18 +91,35 @@ class CustomThemeTooltip extends React.Component {
             </div>
           </div>
         </div>
-        <div className="custom-theme-tooltip__step">
-
+        <div className="custom-theme-tooltip__step custom-theme-tooltip__step--buttons">
+          <button type="button"
+                  className="button button--link button--with-icon"
+                  onClick={() => this.resetAllStyles()}
+                  disabled={changedStyles}>
+            <IconResetAll/> RESET ALL
+          </button>
+          <div>
+            <button type="button" className="button button--link" onClick={() => {
+              showCustomThemeTooltip(false)
+              themeChange(theme.name)
+            }}>Cancel
+            </button>
+            <button type="button" className="button button--primary" onClick={() => {
+              this.applyThemeStyle()
+              showCustomThemeTooltip(false)
+            }}>Apply
+            </button>
+          </div>
         </div>
       </div>
     )
   }
 }
 
-const mapStateToProps = ({themesList}) => {
-  return {themesList}
+const mapStateToProps = ({themesList, theme}) => {
+  return {themesList, theme}
 }
 
-const mapDispatchToProps = {changeCustomThemeStyle}
+const mapDispatchToProps = {changeThemeStyle, showCustomThemeTooltip, themeChange, changeCustomThemeStyle}
 
 export default connect(mapStateToProps, mapDispatchToProps)(CustomThemeTooltip)

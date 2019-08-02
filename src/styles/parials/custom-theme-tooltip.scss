@@ -4,7 +4,8 @@
   position: absolute;
   bottom: 100%;
   width: 524px;
-  left: -230px;
+  left: -60px;
+  margin-bottom: 5px;
 }
 
 .custom-theme-tooltip__step {
@@ -13,6 +14,28 @@
   box-shadow: 0 12px 9px 0 rgba(0, 0, 0, 0.23);
   padding: 25px 40px;
   margin: 0 0 8px;
+  position: relative;
+}
+
+.custom-theme-tooltip__step--buttons {
+  display: flex;
+  justify-content: space-between;
+
+  &:after {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 50%;
+    margin-left: -20px;
+    margin-top: -20px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 40px 0 0 40px;
+    border-color: transparent transparent transparent $color-white;
+    transform: rotate(-45deg);
+    border-radius: 0 0 0 6px;
+  }
 }
 
 .custom-theme-tooltip__title {

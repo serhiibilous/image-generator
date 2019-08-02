@@ -14,7 +14,7 @@
   cursor: pointer;
   outline: none;
   letter-spacing: 0.27px;
-  font-family: 'ProximaNova', Tahoma, Arial, sans-serif;
+  font-family: 'GoodguesMain', Tahoma, Arial, sans-serif;
   text-decoration: none;
   transition: color .15s ease-in-out,
   background-color .15s ease-in-out,
@@ -31,4 +31,31 @@
     background: darken(#f46946, 10%);
     border-color: darken(#f46946, 10%);
   }
+}
+
+.button--link {
+  background: transparent;
+  border-color: transparent;
+  color: #f46946;
+
+  svg {
+    fill: #f46946;
+  }
+
+  &:hover {
+    color: darken(#f46946, 10%);
+  }
+
+  &:disabled {
+    color: #b4dfe5;
+    cursor: default;
+
+    svg {
+      fill: #b4dfe5;
+    }
+  }
+}
+
+.button--with-icon {
+  padding-left: 0;
 }

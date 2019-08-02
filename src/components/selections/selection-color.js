@@ -7,6 +7,19 @@ import IconEyedropper from '../images/icon-eyedropper'
 import CustomThemeTooltip from '../partials/custom-theme-tooltip'
 
 class SelectionColor extends React.Component {
+  tooltip = React.createRef()
+
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside);
+  }
+
+  handleClickOutside = (event) => {
+    if (this.tooltip.current && !this.tooltip.current.contains(event.target)) {
+      this.props.showCustomThemeTooltip(false)
+      this.props.themeChange( this.props.theme.name)
+    }
+  }
+
   render() {
     const {themeChange, showCustomThemeTooltip, theme, themesList, customThemeTooltip} = this.props
 
@@ -21,6 +34,7 @@ class SelectionColor extends React.Component {
             const cssClass = `parameter-selection__item ${cssClassActive}`
             const selectItemText = (themeItem.used) ? '' : '?'
             const customSelectItem = themeItem.name === 'custom'
+            const selectedItemBg = !themeItem.used ? '#e8e8e8' : themeItem.configuration.Background
 
             return (
               <div className={cssClass} key={themeItem.name}>
@@ -29,16 +43,16 @@ class SelectionColor extends React.Component {
                        themeChange(themeItem.name)
                        showCustomThemeTooltip(false)
                      }}
-                     style={{backgroundColor: themeItem.configuration.Background, color: themeItem.configuration.Text}}>{selectItemText}</div>
+                     style={{backgroundColor: selectedItemBg}}>{selectItemText}</div>
                 {customSelectItem &&
                 <div className="parameter-selection__item-label parameter-selection__item-label--eyedropper"
                      onClick={() => showCustomThemeTooltip(true)}>
-                  <IconEyedropper color={"#F46946"}/>
+                  <IconEyedropper color={customThemeTooltip ? "#F46946" : "#a6a6a6"}/>
                 </div>}
               </div>
             )
           })}
-          {customThemeTooltip && <CustomThemeTooltip/>}
+          {customThemeTooltip && <CustomThemeTooltip tooltip={this.tooltip}/>}
         </div>
       </div>
     )

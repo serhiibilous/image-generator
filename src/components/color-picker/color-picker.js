@@ -12,7 +12,6 @@ class ColorPicker extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div>
         <div style={{position: 'relative', width: '100%', height: '135px', margin: '0 0 24px'}}>
