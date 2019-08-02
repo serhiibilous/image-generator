@@ -47,9 +47,16 @@ const showCustomThemeTooltip = (value) => {
   }
 }
 
-const changeCustomThemeStyle = (configuration) => {
+const changeThemeStyle = (configuration) => {
   return {
     type: 'CHANGE_THEME_STYLE',
+    payload: configuration
+  }
+}
+
+const changeCustomThemeStyle = (configuration) => {
+  return {
+    type: 'CHANGE_CUSTOM_THEME_STYLE',
     payload: configuration
   }
 }
@@ -62,5 +69,6 @@ export {
   contentColorChange,
   fontSizeChange,
   showCustomThemeTooltip,
+  changeThemeStyle,
   changeCustomThemeStyle
 }
