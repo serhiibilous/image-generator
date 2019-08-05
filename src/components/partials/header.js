@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from "react-redux"
 
-import LabelIcon from '../images/label-icon'
+import IconLabel from '../images/icon-label'
 import GoodquesLogo from '../images/goodques-logo'
 
 const Header = ({step}) => {
@@ -11,7 +11,7 @@ const Header = ({step}) => {
         {step === 'configuration' && <GoodquesLogo/>}
       </div>
       <div className="content-header__label">
-        <LabelIcon/>
+        <IconLabel/>
       </div>
     </header>
   )

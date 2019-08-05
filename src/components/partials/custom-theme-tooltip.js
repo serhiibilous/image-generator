@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from "react-redux"
 import ColorPicker from '../color-picker'
 import IconResetAll from '../images/icon-reset-all'
+import {convertHexObjectToColor} from '../../utils/convert-hex-object-to-color'
 
 import {changeThemeStyle, showCustomThemeTooltip, themeChange, changeCustomThemeStyle} from '../../store/actions'
 
@@ -12,17 +13,17 @@ class CustomThemeTooltip extends React.Component {
     currentStyle: 'Background',
     customConfiguration: this.props.themesList.find((el) => el.name === 'custom').configuration,
     colorPickerValue: this.props.themesList.find((el) => el.name === 'custom').configuration.Background
+
   }
 
   handleChange = (color) => {
-    console.log(color)
     const customConfiguration = this.state.customConfiguration
     this.setState({
       changedStyles: false,
-      colorPickerValue: color.hex,
+      colorPickerValue: color.rgb,
       customConfiguration: {
         ...customConfiguration,
-        [this.state.currentStyle]: color.hex
+        [this.state.currentStyle]: color.rgb
       }
     })
     this.props.changeThemeStyle(customConfiguration)
@@ -62,10 +63,10 @@ class CustomThemeTooltip extends React.Component {
           <div className="custom-theme-tooltip__column-wrapper">
             <div className="custom-theme-tooltip__column">
               {Object.keys(customConfiguration).map((configuration) => {
-                const styleBorderColor = (customConfiguration[configuration] === '#FFFFFF') ? '' : customConfiguration[configuration]
+                const styleBorderColor = (convertHexObjectToColor(customConfiguration[configuration], 'hex') === '#FFFFFF') ? '' : customConfiguration[configuration]
                 const styleBg = {
-                  background: customConfiguration[configuration],
-                  borderColor: styleBorderColor
+                  background: convertHexObjectToColor(customConfiguration[configuration], 'rgba'),
+                  borderColor: convertHexObjectToColor(styleBorderColor, 'rgba')
                 }
 
                 let cssClassStyle = currentStyle === configuration ? 'active' : ''
@@ -80,7 +81,9 @@ class CustomThemeTooltip extends React.Component {
                          onClick={(event) => this.selectStyle(event, configuration)}>
                       <span className="custom-theme-tooltip__item-bg" style={styleBg}/>
                       <span
-                        className="custom-theme-tooltip__item-color">{customConfiguration[configuration]}</span>
+                        className="custom-theme-tooltip__item-color">
+                        {convertHexObjectToColor(customConfiguration[configuration], 'hex')}
+                      </span>
                     </div>
                   </div>
                 )

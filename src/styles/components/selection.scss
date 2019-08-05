@@ -23,13 +23,21 @@
       &:hover {
         box-shadow: none;
       }
+
+      &.parameter-selection__item-label--eyedropper {
+        &:hover {
+          box-shadow: $parameter-selection-shadow;
+        }
+      }
     }
   }
 
   &.disabled {
     .parameter-selection__item-label {
       cursor: default;
-      opacity: 0.55;
+      opacity: 0.3;
+      min-width: 64px;
+      padding-right: 20px;
 
       &:hover {
         box-shadow: none;
@@ -38,14 +46,21 @@
   }
 }
 
+.parameter-selection__item-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
 .parameter-selection__item-label {
   padding: 10px;
   border-radius: 6px;
-  background: #e8e8e8;
-  color: #a6a6a6;
+  background: $color-grey-light;
+  color: $color-grey;
   min-width: 30px;
   height: 30px;
   font-size: 16px;
+  line-height: 30px;
   font-weight: 900;
   display: flex;
   align-items: center;
@@ -53,7 +68,7 @@
   cursor: pointer;
 
   &:hover {
-    box-shadow: 0 0 5px 0 rgba(50, 50, 50, 0.5);
+    box-shadow: $parameter-selection-shadow;
   }
 }
 
@@ -63,6 +78,9 @@
 }
 
 .parameter-selection__item-label--custom {
+  width: 40px;
+  padding: 0;
+
   &:hover {
     box-shadow: none;
   }

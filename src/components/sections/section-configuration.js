@@ -7,7 +7,7 @@ import SelectionColor from '../selections/selection-color'
 import SelectionExtension from '../selections/selection-extension'
 import SelectionText from '../selections/selection-text'
 import SelectionFontSize from '../selections/selection-font-size'
-import GeneratedImage from '../generated-image'
+import GeneratedImage from '../partials/generated-image'
 
 // Redux
 import {textChange} from '../../store/actions'

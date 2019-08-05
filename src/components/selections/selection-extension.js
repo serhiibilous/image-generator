@@ -1,5 +1,6 @@
 import React from 'react'
 
+import IconExtensionLabel from '../images/icon-extension-label'
 import {connect} from 'react-redux'
 import {extensionChange} from "../../store/actions";
 
@@ -13,18 +14,25 @@ class SelectionExtension extends React.Component {
           File Extension
         </h3>
         <div className="parameter-selection">
-          {extensionList.map((themeItem) => {
+          <div className="parameter-selection__item active">
+            <div className="parameter-selection__item-label">jpg.</div>
+          </div>
+          <div className="parameter-selection__item disabled">
+            <IconExtensionLabel />
+            <div className="parameter-selection__item-label">pdf.</div>
+          </div>
+          {/*{extensionList.map((themeItem) => {
             const cssClassActive = (themeItem.name === extension) ? 'active' : ''
             const cssClassDisabled = (themeItem.name === 'pdf') ? 'disabled' : ''
             const cssClass = `parameter-selection__item ${cssClassActive} ${cssClassDisabled}`
             return (
               <div className={cssClass} key={themeItem.name}>
                 <div className="parameter-selection__item-label"
-                     onClick={() => extensionChange(themeItem.name)}>{themeItem.name}.
+                     onClick={() => {if (themeItem.name !== 'pdf') extensionChange(themeItem.name)}}>{themeItem.name}.
                 </div>
               </div>
             )
-          })}
+          })}*/}
         </div>
       </div>
     )

@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react'
-import WelcomeImage from '../images/welcome-image'
+import ImageWelcome from '../images/image-welcome'
 
 import {sectionChange, contentColorChange} from '../../store/actions'
 
@@ -14,7 +14,7 @@ class SectionWelcome extends React.Component {
       <Fragment>
         <div className="step-welcome">
           <div className="step-welcome__image">
-            <WelcomeImage/>
+            <ImageWelcome/>
           </div>
           <div>
             <h1 className="step-welcome__title">

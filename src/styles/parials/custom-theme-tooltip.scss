@@ -11,7 +11,7 @@
 .custom-theme-tooltip__step {
   background-color: $color-white;
   border-radius: 11px;
-  box-shadow: 0 12px 9px 0 rgba(0, 0, 0, 0.23);
+  box-shadow: $box-shadow-base-color;
   padding: 25px 40px;
   margin: 0 0 8px;
   position: relative;
@@ -42,7 +42,7 @@
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.27px;
-  color: #6d6d6d;
+  color: $color-grey-dark;
   text-transform: uppercase;
   font-weight: 900;
   margin: 0 0 23px;
@@ -71,7 +71,7 @@
   letter-spacing: 0.23px;
   line-height: 30px;
   font-weight: 700;
-  color: #bbbbbb;
+  color: $tooltip-item-name-color;
 }
 
 .custom-theme-tooltip__style {
@@ -83,18 +83,18 @@
   cursor: pointer;
 
   &.active {
-    border-color: #b4dfe5;
+    border-color: $footer-border-color;
 
     &:hover {
       .custom-theme-tooltip__item-color {
-        background-color: #e8e8e8;
+        background-color: $color-grey-light;
       }
     }
   }
 
   &:hover {
     .custom-theme-tooltip__item-color {
-      background-color: darken(#e8e8e8, 10%);
+      background-color: darken($color-grey-light, 10%);
     }
   }
 }
@@ -105,12 +105,12 @@
   border-radius: 6px;
   margin: 0 6px 0 0;
   display: block;
-  border: solid 2px #e8e8e8;
+  border: solid 2px $color-grey-light;
 }
 
 .custom-theme-tooltip__item-color {
-  background-color: #e8e8e8;
-  color: #a6a6a6;
+  background-color: $color-grey-light;
+  color: $color-grey;
   border-radius: 6px;
   line-height: 24px;
   font-size: 14px;
@@ -123,4 +123,19 @@
 
 .hue-horizontal {
   border-radius: 3px;
+}
+
+.color-picker-opacity {
+  position: absolute;
+  top: -6px;
+  right: -53px;
+  background-color: $color-grey-light;
+  color: $color-grey;
+  width: 40px;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 21px;
+  border-radius: 6px;
+  margin-left: 13px;
 }

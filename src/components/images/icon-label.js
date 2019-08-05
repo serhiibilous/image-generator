@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react'
 
-const LabelIcon = () => {
+const IconLabel = () => {
   return (
     <Fragment>
       <svg xmlns="http://www.w3.org/2000/svg"
@@ -30,4 +30,4 @@ const LabelIcon = () => {
   )
 }
 
-export default LabelIcon
+export default IconLabel

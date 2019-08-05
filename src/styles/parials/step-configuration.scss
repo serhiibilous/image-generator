@@ -1,6 +1,5 @@
 @import "../variables";
 
-$step-configuration-shadow: 0 12px 9px 0 rgba(0, 0, 0, 0.23);
 $step-content-image-size: 324px;
 $step-configuration-footprint-size: 44px;
 
@@ -18,7 +17,7 @@ $step-configuration-footprint-size: 44px;
   background: $color-white;
   width: 100%;
   border-radius: 11px;
-  box-shadow: $step-configuration-shadow;
+  box-shadow: $box-shadow-base-color;
   padding: 30px 40px;
   margin: 0 0 13px;
   position: relative;
@@ -47,7 +46,7 @@ $step-configuration-footprint-size: 44px;
   height: $step-configuration-footprint-size;
   left: -$step-configuration-footprint-size;
   top: 33px;
-  background-color: #95c8cf;
+  background-color: $conf-title-color;
   border-radius: 93px 0 0 93px;
   display: flex;
   align-items: center;
@@ -107,12 +106,18 @@ $step-configuration-footprint-size: 44px;
   margin: 0 0 5px;
 }
 
+.step-content__image-text {
+  display: inline;
+  position: relative;
+  border-right: 0.15em solid;
+}
+
 .step-content__configuration {
   width: calc(100% - 30px - #{$step-content-image-size});
 }
 
 .step-content__title {
-  color: #95c8cf;
+  color: $conf-title-color;
   line-height: 1;
   letter-spacing: 0.27px;
   margin: 0 0 13px;
@@ -124,14 +129,16 @@ $step-configuration-footprint-size: 44px;
 
 .step-content__textarea-wrapper {
   position: relative;
-  margin: 0 0 2px;
+  margin: 0 0 13px;
 }
 
 .step-content__textarea {
   border: 2px solid $color-text;
   border-radius: 6px;
   width: 100%;
+  min-width: 100%;
   min-height: 112px;
+  max-height: 112px;
   font-size: 14px;
   line-height: 1.5;
   letter-spacing: 0.17px;
@@ -143,9 +150,9 @@ $step-configuration-footprint-size: 44px;
 
 .step-content__text-length {
   text-align: right;
-  color: #a9dbe2;
+  color: $conf-title-color;
   font-size: 10px;
-  line-height: 2.1;
+  line-height: 11px;
   letter-spacing: 0.12px;
   font-weight: 900;
 }

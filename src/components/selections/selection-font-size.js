@@ -4,6 +4,16 @@ import {connect} from 'react-redux'
 import {fontSizeChange} from "../../store/actions"
 
 class SelectionFontSize extends React.Component {
+  fontSizeUpdate = (value) => {
+    if (value === 'increment') {
+      if (this.props.fontSize >= 50) return
+      this.props.fontSizeChange(this.props.fontSize + 1)
+    } else if (value === 'decrement') {
+      if (this.props.fontSize <= 10) return
+      this.props.fontSizeChange(this.props.fontSize - 1)
+    }
+  }
+
   render() {
     const {fontSizeChange, fontSize} = this.props
 
@@ -19,9 +29,9 @@ class SelectionFontSize extends React.Component {
             </div>
             <div className="parameter-selection__counter">
               <div className="parameter-selection__counter-item parameter-selection__counter-item--plus"
-                   onClick={() => fontSizeChange(fontSize + 1)}/>
+                   onClick={() => this.fontSizeUpdate('increment')}/>
               <div className="parameter-selection__counter-item parameter-selection__counter-item--minus"
-                   onClick={() => fontSizeChange(fontSize - 1)}/>
+                   onClick={() => this.fontSizeUpdate('decrement')}/>
             </div>
           </div>
         </div>

@@ -4,12 +4,12 @@ const initialState = {
     name: 'light',
     used: true,
     configuration: {
-      Background: '#d1fdfe',
-      Quotes: '#f46946',
-      Text: '#95c8cf',
-      Cursor: '#f46946',
-      LogoFirst: '#F46946',
-      LogoSecond: '#B4DFE5',
+      Background: {r: 209, g: 253, b: 254, a: 1},
+      Quotes: {r: 244, g: 105, b: 70, a: 1},
+      Text: {r: 149, g: 200, b: 207, a: 1},
+      Cursor: {r: 244, g: 105, b: 70, a: 1},
+      LogoFirst: {r: 244, g: 105, b: 70, a: 1},
+      LogoSecond: {r: 180, g: 223, b: 229, a: 1}
     }
   },
   themesList: [
@@ -17,48 +17,48 @@ const initialState = {
       name: 'light',
       used: true,
       configuration: {
-        Background: '#d1fdfe',
-        Quotes: '#f46946',
-        Text: '#95c8cf',
-        Cursor: '#f46946',
-        LogoFirst: '#F46946',
-        LogoSecond: '#B4DFE5'
+        Background: {r: 209, g: 253, b: 254, a: 1},
+        Quotes: {r: 244, g: 105, b: 70, a: 1},
+        Text: {r: 149, g: 200, b: 207, a: 1},
+        Cursor: {r: 244, g: 105, b: 70, a: 1},
+        LogoFirst: {r: 244, g: 105, b: 70, a: 1},
+        LogoSecond: {r: 180, g: 223, b: 229, a: 1}
       }
     },
     {
       name: 'black',
       used: true,
       configuration: {
-        Background: '#0a2c31',
-        Quotes: '#f46946',
-        Text: '#ffffff',
-        Cursor: '#f46946',
-        LogoFirst: '#F46946',
-        LogoSecond: '#ffffff'
+        Background: {r: 10, g: 44, b: 49, a: 1},
+        Quotes: {r: 244, g: 105, b: 70, a: 1},
+        Text: {r: 255, g: 255, b: 255, a: 1},
+        Cursor: {r: 244, g: 105, b: 70, a: 1},
+        LogoFirst: {r: 244, g: 105, b: 70, a: 1},
+        LogoSecond: {r: 255, g: 255, b: 255, a: 1}
       }
     },
     {
       name: 'red',
       used: true,
       configuration: {
-        Background: '#f46946',
-        Quotes: '#7F210A',
-        Text: '#ffffff',
-        Cursor: '#7F210A',
-        LogoFirst: '#ffffff',
-        LogoSecond: '#ffffff'
+        Background: {r: 244, g: 105, b: 70, a: 1},
+        Quotes: {r: 127, g: 33, b: 10, a: 1},
+        Text: {r: 255, g: 255, b: 255, a: 1},
+        Cursor: {r: 127, g: 33, b: 10, a: 1},
+        LogoFirst: {r: 255, g: 255, b: 255, a: 1},
+        LogoSecond: {r: 255, g: 255, b: 255, a: 1}
       }
     },
     {
       name: 'custom',
       used: false,
       configuration: {
-        Background: '#f46946',
-        Quotes: '#7F210A',
-        Text: '#FFFFFF',
-        Cursor: '#7F210A',
-        LogoFirst: '#FFFFFF',
-        LogoSecond: '#FFFFFF'
+        Background: {r: 244, g: 105, b: 70, a: 1},
+        Quotes: {r: 127, g: 33, b: 10, a: 1},
+        Text: {r: 255, g: 255, b: 255, a: 1},
+        Cursor: {r: 127, g: 33, b: 10, a: 1},
+        LogoFirst: {r: 255, g: 255, b: 255, a: 1},
+        LogoSecond: {r: 255, g: 255, b: 255, a: 1}
       }
     }
   ],
@@ -72,9 +72,9 @@ const initialState = {
       value: 'pdf'
     }
   ],
-  // step: 'welcome',
+  step: 'welcome',
   customThemeTooltip: false,
-  step: 'configuration',
+  // step: 'configuration',
   text: 'Your text here',
   extension: 'jpg',
   fontSize: 15

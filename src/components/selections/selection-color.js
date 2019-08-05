@@ -1,5 +1,6 @@
 import React from 'react'
 
+import {convertHexObjectToColor} from '../../utils/convert-hex-object-to-color'
 import {connect} from 'react-redux'
 import {themeChange, showCustomThemeTooltip} from "../../store/actions"
 
@@ -10,7 +11,7 @@ class SelectionColor extends React.Component {
   tooltip = React.createRef()
 
   componentDidMount() {
-    document.addEventListener('mousedown', this.handleClickOutside);
+    // document.addEventListener('mousedown', this.handleClickOutside);
   }
 
   handleClickOutside = (event) => {
@@ -35,7 +36,6 @@ class SelectionColor extends React.Component {
             const selectItemText = (themeItem.used) ? '' : '?'
             const customSelectItem = themeItem.name === 'custom'
             const selectedItemBg = !themeItem.used ? '#e8e8e8' : themeItem.configuration.Background
-
             return (
               <div className={cssClass} key={themeItem.name}>
                 <div className="parameter-selection__item-label"
@@ -43,7 +43,9 @@ class SelectionColor extends React.Component {
                        themeChange(themeItem.name)
                        showCustomThemeTooltip(false)
                      }}
-                     style={{backgroundColor: selectedItemBg}}>{selectItemText}</div>
+                     style={{backgroundColor: selectedItemBg.length === 7 ? selectedItemBg : convertHexObjectToColor(selectedItemBg, 'rgba')}}>
+                  {selectItemText}
+                </div>
                 {customSelectItem &&
                 <div className="parameter-selection__item-label parameter-selection__item-label--eyedropper"
                      onClick={() => showCustomThemeTooltip(true)}>

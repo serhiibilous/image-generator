@@ -1,14 +1,33 @@
-$bg-color: #d1fdfe;
+// Variables
 
+// Text colors
 $color-text: #b4dfe5;
 $color-text-dark: #0a2c31;
 
 // Base colors
-$color-white: #fff;
+$color-white: #ffffff;
 $color-orange: #f46946;
+$color-red: #f46946;
+$color-grey: #a6a6a6;
+$color-grey-light: #e8e8e8;
+$color-grey-dark: #6d6d6d;
 
 // Footer
 $footer-height: 110px;
+$footer-border-color: #b4dfe5;
 
 // Container
-$container-width: 970px;
+$container-width: 977px;
+
+// Configuration
+$conf-title-color: #95c8cf;
+$parameter-selection-shadow: 0 0 5px 0 rgba(50, 50, 50, 0.5);
+
+// Buttons
+$button-disabled-color: #b4dfe5;
+
+// Tooltip
+$tooltip-item-name-color: #bbbbbb;
+
+// Box shadow
+$box-shadow-base-color: 0 12px 9px 0 rgba(0, 0, 0, 0.23);

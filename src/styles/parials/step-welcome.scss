@@ -23,7 +23,7 @@
   font-size: 32px;
   line-height: 1.09;
   letter-spacing: 0.19px;
-  color: #95c8cf;
+  color: $conf-title-color;
   margin: 0 0 6px;
   font-weight: 900;
 }
@@ -32,7 +32,7 @@
   font-size: 16px;
   line-height: 2.19;
   letter-spacing: 0.19px;
-  color: #0a2c31;
+  color: $color-text-dark;
   margin: 0;
 }
 

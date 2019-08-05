@@ -11,22 +11,34 @@ class ColorPicker extends React.Component {
     this.props.onChange(data);
   }
 
+  convertIntToPercent = (value) => {
+    console.log(value)
+    return (value * 100).toFixed()
+  }
+
   render() {
+    const styleOpacityValue = {
+
+    }
+    console.log(this.props)
     return (
       <div>
-        <div style={{position: 'relative', width: '100%', height: '135px', margin: '0 0 24px'}}>
+        <div style={{position: 'relative', width: '100%', height: '150px', margin: '0 0 26px'}}>
           <Saturation
             {...this.props} onChange={this.handleChange} pointer={CircleCustomPointer}/>
         </div>
-        <div style={{position: 'relative', width: '100%', height: '7px', margin: '0 0 31px'}}>
+        <div style={{position: 'relative', width: '100%', height: '7px', margin: '0 0 34px'}}>
           <Hue
             {...this.props}
             pointer={VerticalCustomPointer}
             onChange={this.handleChange}
             direction={'horizontal'}/>
         </div>
-        <div style={{position: 'relative', width: '100%', height: '7px'}}>
+        <div style={{position: 'relative', width: 'calc(100% - 53px)', height: '7px'}}>
           <Alpha {...this.props} onChange={this.handleChange} pointer={VerticalCustomPointer}/>
+          <div className="color-picker-opacity">
+            {this.convertIntToPercent(this.props.rgb.a)}%
+          </div>
         </div>
       </div>
     )

@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react'
 
-const WelcomeImage = () => {
+const ImageWelcome = () => {
   return (
     <Fragment>
       <svg xmlns="http://www.w3.org/2000/svg"
@@ -50,4 +50,4 @@ const WelcomeImage = () => {
   )
 }
 
-export default WelcomeImage
+export default ImageWelcome
